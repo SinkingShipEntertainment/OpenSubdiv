@@ -50,6 +50,7 @@ build_system = "cmake"
 uuid = "repository.OpenSubdiv"
 
 def commands():
+    env.OPENSUBDIV_ROOT_DIR = "{root}"
     env.PATH.prepend("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib")
     if building:
