@@ -39,7 +39,7 @@ variants = [
     ["platform-linux", "arch-x86_64", "os-centos-7"]
 ]
 
-build_system = "cmake"
+#build_system = "cmake"
 
 uuid = "repository.OpenSubdiv"
 
