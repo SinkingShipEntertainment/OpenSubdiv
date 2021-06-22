@@ -291,23 +291,23 @@ option(GLEW_LOCATION "Path to GLEW" "")
 option(GLFW_LOCATION "Path to GLFW" "")
 
 option(NO_LIB "Disable the opensubdiv libs build (caveat emptor)" OFF)
-option(NO_EXAMPLES "Disable examples build" OFF)
-option(NO_TUTORIALS "Disable tutorials build" OFF)
-option(NO_REGRESSION "Disable regression tests build" OFF)
+option(NO_EXAMPLES "Disable examples build" ON)
+option(NO_TUTORIALS "Disable tutorials build" ON)
+option(NO_REGRESSION "Disable regression tests build" ON)
 option(NO_PTEX "Disable PTex support" OFF)
-option(NO_DOC "Disable documentation build" OFF)
-option(NO_OMP "Disable OpenMP backend" OFF)
-option(NO_TBB "Disable TBB backend" OFF)
-option(NO_CUDA "Disable CUDA backend" OFF)
-option(NO_OPENCL "Disable OpenCL backend" OFF)
+option(NO_DOC "Disable documentation build" ON)
+option(NO_OMP "Disable OpenMP backend" ON)
+option(NO_TBB "Disable TBB backend" ON)
+option(NO_CUDA "Disable CUDA backend" ON)
+option(NO_OPENCL "Disable OpenCL backend" ON)
 option(NO_CLEW "Disable CLEW wrapper library" OFF)
 option(NO_OPENGL "Disable OpenGL support")
 option(NO_METAL "Disable Metal support" OFF)
-option(NO_DX "Disable DirectX support")
-option(NO_TESTS "Disable all tests")
+option(NO_DX "Disable DirectX support" ON)
+option(NO_TESTS "Disable all tests" ON)
 option(NO_GLTESTS "Disable GL tests")
 option(NO_GLEW "Disable use of GLEW" ON)
-option(NO_GLFW "Disable components depending on GLFW" OFF)
+option(NO_GLFW "Disable components depending on GLFW" ON)
 option(NO_GLFW_X11 "Disable GLFW components depending on X11" OFF)
 
 option(OPENSUBDIV_GREGORY_EVAL_TRUE_DERIVATIVES "Enable true derivative evaluation for Gregory basis patches" OFF)
@@ -652,7 +652,7 @@ if (WIN32)
             "environment variable."
         )
     endif()
-    
+
     # Link examples & regressions statically against Osd for
     # Windows until all the kinks can be worked out.
     if( OSD_GPU )
@@ -660,7 +660,7 @@ if (WIN32)
     else()
         set( OSD_LINK_TARGET osd_static_cpu )
     endif()
-    
+
 endif()
 
 
@@ -842,3 +842,11 @@ endif()
 if (NOT NO_DOC)
     add_subdirectory(documentation)
 endif()
+
+
+# REZ
+include(RezBuild)
+rez_install_files(
+    rez_cmake/FindOpenSubdiv.cmake
+    DESTINATION .
+)
