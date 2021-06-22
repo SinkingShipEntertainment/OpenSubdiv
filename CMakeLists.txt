@@ -911,8 +911,4 @@ if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.0.2)
 endif()
 
 # REZ
-include(RezBuild)
-rez_install_files(
-    rez_cmake/FindOpenSubdiv.cmake
-    DESTINATION .
-)
+install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/rez_cmake DESTINATION ${CMAKE_INSTALL_PREFIX})
