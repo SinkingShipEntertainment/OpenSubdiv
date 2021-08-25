@@ -299,11 +299,19 @@ option(PTEX_LOCATION "Path to Ptex" "")
 option(GLEW_LOCATION "Path to GLEW" "")
 option(GLFW_LOCATION "Path to GLFW" "")
 
+# REZ ----------------------------------------
+# NOTE: Do not use Ptex unless it is in the REZ environment
+set(REZ_DISABLE_PTEX ON)
+if(DEFINED $ENV{REZ_PTEX_ROOT})
+    set(REZ_DISABLE_PTEX OFF)
+endif()
+# --------------------------------------------
+
 option(NO_LIB "Disable the opensubdiv libs build (caveat emptor)" OFF)
 option(NO_EXAMPLES "Disable examples build" ON)
 option(NO_TUTORIALS "Disable tutorials build" ON)
 option(NO_REGRESSION "Disable regression tests build" ON)
-option(NO_PTEX "Disable PTex support" OFF)
+option(NO_PTEX "Disable PTex support" ${REZ_DISABLE_PTEX})
 option(NO_DOC "Disable documentation build" ON)
 option(NO_OMP "Disable OpenMP backend" ON)
 option(NO_TBB "Disable TBB backend" ON)

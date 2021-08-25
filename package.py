@@ -29,15 +29,14 @@ with scope("config") as c:
         c.release_packages_path = os.environ["SSE_REZ_REPO_RELEASE_EXT"]
 
 requires = [
-    "ptex-2.1.28",
 ]
 
 private_build_requires = [
-    "rez",
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-centos-7"]
+    ["platform-linux", "arch-x86_64", "os-centos-7"],
+    ["platform-linux", "arch-x86_64", "os-centos-7", "ptex-2.1.28"],
 ]
 
 uuid = "repository.OpenSubdiv"
