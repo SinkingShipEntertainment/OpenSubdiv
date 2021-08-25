@@ -35,7 +35,7 @@ private_build_requires = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-centos-7"],
+    ["platform-linux", "arch-x86_64", "os-centos-7", "!ptex"],
     ["platform-linux", "arch-x86_64", "os-centos-7", "ptex-2.1.28"],
 ]
 
