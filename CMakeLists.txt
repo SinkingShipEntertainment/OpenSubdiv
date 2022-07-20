@@ -861,7 +861,3 @@ endif()
 if (NOT NO_DOC)
     add_subdirectory(documentation)
 endif()
-
-
-# REZ
-install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/rez_cmake DESTINATION ${CMAKE_INSTALL_PREFIX})
