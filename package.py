@@ -1,6 +1,6 @@
 name = "OpenSubdiv"
 
-version = "3.4.3"
+version = "3.4.4"
 
 authors = [
     "Pixar Animation Studio"
@@ -36,7 +36,7 @@ private_build_requires = [
 
 variants = [
     ["platform-linux", "arch-x86_64", "os-centos-7", "!ptex"],
-    ["platform-linux", "arch-x86_64", "os-centos-7", "ptex-2.1.28"],
+    ["platform-linux", "arch-x86_64", "os-centos-7", "ptex-2.1.33"],
 ]
 
 uuid = "repository.OpenSubdiv"
@@ -47,7 +47,3 @@ def pre_build_commands():
 def commands():
     env.OPENSUBDIV_ROOT_DIR = "{root}"
     env.PATH.prepend("{root}/bin")
-    #env.LD_LIBRARY_PATH.append("{root}/lib")
-
-    if building:
-        env.CMAKE_MODULE_PATH.append("{root}/rez_cmake")
