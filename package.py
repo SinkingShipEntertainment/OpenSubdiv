@@ -1,6 +1,6 @@
 name = "OpenSubdiv"
 
-version = "3.4.4"
+version = "3.5.0"
 
 authors = [
     "Pixar Animation Studio"
@@ -36,7 +36,7 @@ private_build_requires = [
 
 variants = [
     ["platform-linux", "arch-x86_64", "os-centos-7", "!ptex"],
-    ["platform-linux", "arch-x86_64", "os-centos-7", "ptex-2.1.33"],
+    ["platform-linux", "arch-x86_64", "os-centos-7", "ptex-2.3.2"],
 ]
 
 uuid = "repository.OpenSubdiv"
