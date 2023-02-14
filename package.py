@@ -47,3 +47,4 @@ def pre_build_commands():
 def commands():
     env.OPENSUBDIV_ROOT_DIR = "{root}"
     env.PATH.prepend("{root}/bin")
+    env.LD_LIBRARY_PATH.append("{root}/lib")
