@@ -19,6 +19,7 @@ with scope("config") as c:
 
 requires = [
     "clew",
+    "glfw",
     "tbb",
 ]
 
