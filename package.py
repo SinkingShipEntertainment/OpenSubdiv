@@ -18,6 +18,7 @@ with scope("config") as c:
     c.release_packages_path = os.environ["SSE_REZ_REPO_RELEASE_EXT"]
 
 requires = [
+    "clew",
     "tbb",
 ]
 
